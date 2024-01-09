@@ -1,0 +1,144 @@
+/*リセットスタイル*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*共通設定*/
+@media screen and (mix-width:768px ) {
+	.sp-only{
+		display: none;
+	}
+
+	.pc-only{
+		display: block;
+	}
+}
+@media screen and (max-width:768px ) {
+	.pc-only{
+		display: none;
+	}
+
+	.sp-only{
+		display: block;
+	}
+}
+/*ヘッダーの設定*/
+.header{
+	width: 200px;
+	background: #eee;
+	display: block;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+} 
+/*ヘッダーロゴのスタイル*/
+.logo-area{
+	position: relative;
+	top: 40px;
+	padding: 50px auto;
+	text-align: center;
+	z-index: 1;
+}
+
+
+.pc-only{
+	position: relative;
+	top: 110px;
+	height: 100%;
+}
+
+.gnav-list{
+	height: 70%;
+}
+
+.gnav-list li {
+	padding-left: 20px;
+	padding-bottom: 20px;
+	font-size:0.8em;text-align:left;
+}
+
+.gnav-list li a{
+	text-decoration: none;
+	color: #000;
+}
+
+.sns-container{
+	position: relative;
+	top: 40px;
+}
+
+.sns-item{
+	display: flex;
+	justify-content: center;
+	
+}
+	
+.sns-item a img{
+	margin: 0 0.5em;
+}
+
+.gnav-hidden{
+	display: none;}
+
+/*ハンバーガーメニューのスタイル*/
+/*チェックボックスを非表示*/
+@media screen and (max-width:768px ) {
+	.header,
+	.logo-area{
+		width: 100%;
+		background: #eee;
+		display: block;
+		position: fixed;
+		top: 0;
+		height: 60px;
+		text-align: center;
+	}
+
+	.logo-area img{
+		margin-top: 20px;
+		width: 160px;
+	}
+
+	.gnav-hidden{
+		display: none;}
+    /*labelで作るメニューボタン*/
+    #gnav-btn{
+		display: block;
+		width: 40px;
+		height: 40px;
+		position: fixed;
+		top: 10px;
+		right: 20px;
+		z-index: 100;
+		background: url(../img/ico-nav.svg) center center no-repeat;
+	}
+	.sp-only{
+		/* position: fixed;
+		top: 60px;
+		right: -100%;
+		z-index: 100; */
+		width: 100%;
+		height: 100vh;
+		transition:0.5;
+	}
+	.gnav-list{
+		background: #eff;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
+	
+	/* #gnav-white{
+		position: fixed;
+		z-index: 90;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.5);
+	} */
+
+}
