@@ -2,87 +2,117 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>&amp; Premium (アンド プレミアム) The guide to a better Life</title>
-    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Noto+Sans:wght@400;700&family=Noto+Serif+JP&family=Open+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/style.css">
   </head>
   <body>
     <header class="header">
-        <div class="logo-area">
-            <img src="img/header-logo.svg" width="180px" alt="ヘッダーロゴ">
-        </div>
-            <nav class="pc-only">
-                    <input id="gnav-input" type="checkbox" class="gnav-hidden">
-                    <label id="gnav-btn" for="gnav-input"></label>
-                    <label id="gnav-white" for="gnav-input"></label>
-              <ul class="gnav-list">
-                <li><a href="#">MAGAZINE</a></li>
-                <li><a href="#">LIFESTYLE</a></li>
-                <li><a href="#">CULTURE </a></li>
-                <li><a href="#">FASHION</a></li>
-                <li><a href="#">BEAUTY</a></li>
-                <li><a href="#">FOOD</a></li>
-                <li><a href="#">COLUMN</a></li>
-              </ul>
-              <dl class="sns-container">
-                <div class="sns-item">
-                <a href="https://www.facebook.com/AndPremium2013/"
-                  ><img
-                    src="../premium/img/ico-facebook-fill.svg"
-                    alt="facebook" /></a
-                ><a href="https://twitter.com/and_premium"
-                  ><img
-                    src="../premium/img/ico-twitter-fill.svg"
-                    alt="twitter" /></a
-                ><a href="https://www.instagram.com/and_premium/"
-                  ><img
-                    src="../premium/img/ico-instagram-line.svg"
-                    alt="instagram" /></a
-                ><a
-                  href="https://www.youtube.com/channel/UCGwRhr2ARi6xOASbdolc9Ag/featured"
-                  ><img src="../premium/img/ico-youtube-fill.svg" alt="youtube"
-                /></a>
-            </div>
-        </dl>
-          </nav>
-        </div>
-          <nav class="sp-only">
-                <input id="gnav-input" type="checkbox" class="gnav-hidden">
-                <label id="gnav-btn" for="gnav-input"></label>
-                <!-- <label id="gnav-white" for="gnav-input" ></label> -->
-            <ul class="gnav-list">
-              <li><a href="#">MAGAZINE</a></li>
-              <li><a href="#">LIFESTYLE</a></li>
-              <li><a href="#">CULTURE </a></li>
-              <li><a href="#">FASHION</a></li>
-              <li><a href="#">BEAUTY</a></li>
-              <li><a href="#">FOOD</a></li>
-              <li><a href="#">COLUMN</a></li>
-            </ul>
-            <dl class="sns-container">
-              <div class="sns-item">
-              <a href="https://www.facebook.com/AndPremium2013/"
-                ><img
-                  src="../premium/img/ico-facebook-fill.svg"
-                  alt="facebook" /></a
-              ><a href="https://twitter.com/and_premium"
-                ><img
-                  src="../premium/img/ico-twitter-fill.svg"
-                  alt="twitter" /></a
-              ><a href="https://www.instagram.com/and_premium/"
-                ><img
-                  src="../premium/img/ico-instagram-line.svg"
-                  alt="instagram" /></a
-              ><a
-                href="https://www.youtube.com/channel/UCGwRhr2ARi6xOASbdolc9Ag/featured"
-                ><img src="../premium/img/ico-youtube-fill.svg" alt="youtube"
-              /></a>
+      <div class="logo-area">
+        <img src="img/header-logo.svg" width="180px" alt="ヘッダーロゴ" />
+      </div>
+      <nav class="pc-only">
+        <ul class="gnav-list">
+          <li><a href="#">MAGAZINE</a></li>
+          <li><a href="#">LIFESTYLE</a></li>
+          <li><a href="#">CULTURE </a></li>
+          <li><a href="#">FASHION</a></li>
+          <li><a href="#">BEAUTY</a></li>
+          <li><a href="#">FOOD</a></li>
+          <li><a href="#">COLUMN</a></li>
+        </ul>
+        <div class="sns-container">
+          <div class="sns-item">
+            <a href="https://www.facebook.com/AndPremium2013/"
+              ><img src="img/ico-facebook-fill.svg" alt="facebook" /></a
+            ><a href="https://twitter.com/and_premium"
+              ><img src="img/ico-twitter-fill.svg" alt="twitter" /></a
+            ><a href="https://www.instagram.com/and_premium/"
+              ><img src="img/ico-instagram-line.svg" alt="instagram" /></a
+            ><a
+              href="https://www.youtube.com/channel/UCGwRhr2ARi6xOASbdolc9Ag/featured"
+              ><img src="img/ico-youtube-fill.svg" alt="youtube"
+            /></a>
           </div>
-      </dl>
-        </nav>  
+        </div>
+      </nav>
+      <nav class="sp-only">
+        <input id="gnav-input" type="checkbox" class="gnav-hidden" />
+        <label id="gnav-btn" for="gnav-input"></label>
+
+        <div id="gnav-toggle" class="gnav-white">
+          <label id="gnav-close" for="gnav-input" class="gnav-black"></label>
+          <ul class="gnav-list">
+            <li><a href="#">MAGAZINE</a></li>
+            <li><a href="#">LIFESTYLE</a></li>
+            <li><a href="#">CULTURE </a></li>
+            <li><a href="#">FASHION</a></li>
+            <li><a href="#">BEAUTY</a></li>
+            <li><a href="#">FOOD</a></li>
+            <li><a href="#">COLUMN</a></li>
+          </ul>
+          <div class="sns-container">
+            <div class="sns-item">
+              <a href="https://www.facebook.com/AndPremium2013/"
+                ><img src="img/ico-facebook-fill.svg" alt="facebook" /></a
+              ><a href="https://twitter.com/and_premium"
+                ><img src="img/ico-twitter-fill.svg" alt="twitter" /></a
+              ><a href="https://www.instagram.com/and_premium/"
+                ><img src="img/ico-instagram-line.svg" alt="instagram" /></a
+              ><a href="https://www.youtube.com/channel/UCGwRhr2ARi6xOASbdolc9Ag/featured"
+                ><img src="img/ico-youtube-fill.svg" alt="youtube"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
-
+      <section class="main-visual">
+        <img src="img/mv-bg@2x.jpg" alt="背景画像">
+        <div class="new-issue">
+          <img src="img/new-issue@2x.png"   alt="最新号画像">
+        </div>
+          <div class="main-text">
+            <h1><span>2022 JUN. &amp;Premium No. 102</span></h1>
+            <h2><span>Life with Flowers &amp; Greens</span></h2>
+            <h3><span>花を飾る、緑と暮らす。</span></h3>
+          </div>
+      </section>
+      <section class="backnumber-list">
+        <div class="backnumber-title">
+          <h4>BACKNUMBERS  <br>バックナンバー
+          </h4>
+        </div>
+        <ul class="container">
+          <li class="backnumber-item-96">Oct. 20, 2021
+            &amp;Premium No. 96
+            TABLEWARE FOR LIFE ／ 器を知る、学ぶ、楽しむ。</li>
+          <li class="backnumber-item-97">Nov. 19, 2021
+            &amp;Premium No. 97
+            PEACEFUL MOMENTS ／ 静かに過ごす時間が、必要です。</li>
+          <li class="backnumber-item-98">Dec. 20, 2021
+            &amp;Premium No. 98
+            SNACK TIME ／ やっぱり、おやつは大切。</li>
+          <li class="backnumber-item-99">Jun. 20, 2022
+            &amp;Premium No. 99
+            COZY ROOMS ／ 居心地のいい部屋に、整える。</li>
+          <li class="backnumber-item-100">Feb. 19, 2022
+            &amp;Premium No. 100
+            Kissaten 100 ／ 喫茶店、100のこと</li>
+          <li class="backnumber-item-101">Mar. 20, 2022
+            &amp;Premium No. 101
+            IN GOOD TASTE ／ センスがいいって、どういうことですか?</li>
+        </ul>
+      </section>
     </main>
   </body>
 </html>

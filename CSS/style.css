@@ -5,7 +5,11 @@
 	box-sizing: border-box;
 }
 /*共通設定*/
-@media screen and (mix-width:768px ) {
+:root {
+	--main-color:#fff;
+}
+
+@media screen and (min-width:768px ) {
 	.sp-only{
 		display: none;
 	}
@@ -14,6 +18,7 @@
 		display: block;
 	}
 }
+
 @media screen and (max-width:768px ) {
 	.pc-only{
 		display: none;
@@ -23,26 +28,28 @@
 		display: block;
 	}
 }
-/*ヘッダーの設定*/
+
+
+
+/*PC用のヘッダーの設定*/
 .header{
 	width: 200px;
-	background: #eee;
+	background:var(--main-color);
 	display: block;
 	height: 100vh;
 	position: fixed;
 	top: 0;
 	left: 0;
 } 
-/*ヘッダーロゴのスタイル*/
+/*PC用のヘッダーロゴのスタイル*/
 .logo-area{
 	position: relative;
 	top: 40px;
-	padding: 50px auto;
 	text-align: center;
 	z-index: 1;
 }
 
-
+/*PCのスタイル*/
 .pc-only{
 	position: relative;
 	top: 110px;
@@ -56,7 +63,8 @@
 .gnav-list li {
 	padding-left: 20px;
 	padding-bottom: 20px;
-	font-size:0.8em;text-align:left;
+	font-size:0.8em;
+	text-align:left;
 }
 
 .gnav-list li a{
@@ -71,8 +79,7 @@
 
 .sns-item{
 	display: flex;
-	justify-content: center;
-	
+	justify-content: center;	
 }
 	
 .sns-item a img{
@@ -80,15 +87,20 @@
 }
 
 .gnav-hidden{
-	display: none;}
+	display: none;
+} 
 
-/*ハンバーガーメニューのスタイル*/
-/*チェックボックスを非表示*/
-@media screen and (max-width:768px ) {
-	.header,
+/*SP用のスタイル*/
+@media screen and (max-width:768px) {
+	/*ヘッダー*/
+	.header{
+		width: 100vw;
+	}
+
+	/*ヘッダーロゴ*/
 	.logo-area{
 		width: 100%;
-		background: #eee;
+		background:var(--main-color);
 		display: block;
 		position: fixed;
 		top: 0;
@@ -101,44 +113,182 @@
 		width: 160px;
 	}
 
+	/*メニューボタン*/
+	#gnav-btn,
 	.gnav-hidden{
-		display: none;}
-    /*labelで作るメニューボタン*/
-    #gnav-btn{
-		display: block;
 		width: 40px;
 		height: 40px;
 		position: fixed;
 		top: 10px;
 		right: 20px;
 		z-index: 100;
-		background: url(../img/ico-nav.svg) center center no-repeat;
-	}
-	.sp-only{
-		/* position: fixed;
-		top: 60px;
-		right: -100%;
-		z-index: 100; */
-		width: 100%;
-		height: 100vh;
-		transition:0.5;
-	}
-	.gnav-list{
-		background: #eff;
-		height: 100%;
-		width: 100%;
-		text-align: center;
+		background: url("../img/ico-nav.svg") no-repeat;
+		background-size: 30px;
 	}
 
-	
-	/* #gnav-white{
+	.gnav-white{
 		position: fixed;
-		z-index: 90;
-		top: 0;
-		right: 0;
-		width: 100%;
+		top: 0px;
+		right: -100%;
+		z-index: 100; 
+		width: 100vw;
 		height: 100vh;
-		background: rgba(0, 0, 0, 0.5);
+		background:var(--main-color);
+		transition: 0.5s;
+		position: relative;
+	}
+	
+	.gnav-black{
+		background: url("../img/ico-nav-close.svg") no-repeat;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		top: 10px;
+		right: 20px;
+		z-index: 90;
+		background-size: 30px;
+	}
+	
+	.gnav-hidden{
+		display: none;
+	}
+    #gnav-input:checked ~ #gnav-close{
+		display: none;
+	} 
+
+	#gnav-input:checked ~ #gnav-close{
+		display: none;
+	} 
+
+	#gnav-input:checked ~ #gnav-toggle{
+		right: 0;
+	}
+
+	/*ハンバーガーメニュー*/
+	.gnav-list li {
+		position: relative;
+		top: 20%;
+		font-size: 1em;
+		text-align: center;
+		list-style: none;
+	}
+	
+	.gnav-list li a{
+		text-decoration: none;
+		color: #000;
+	}
+
+	.sns-container{
+		position: relative;
+		top: 40px;
+		
+	}
+	
+	.sns-item{
+		display: flex;
+		text-align: center;
+		justify-content: center;
+		list-style: none;
+	}
+		
+	.sns-item a img{
+		margin: 0 0.5em;
+	}
+}
+
+/*PC用メインビジュアル*/
+@media screen and (min-width:768px) {
+main{
+	height: 100vh;
+	width: 100vw;
+	background-size:cover;
+	margin-left: 200px;
+}
+	
+
+.main-visual{
+	position: relative;
+}
+
+.main-visual img{
+	height: 100%;
+	width: 100%;
+}
+
+.new-issue{
+	position: absolute;
+	top: 50%;
+	left: 40%;
+	transform: translate(-50% , -50%);
+	z-index: 1;
+}
+
+.new-issue img{
+	width: 55vw;
+	max-width: 550px;
+	height: 100vh;
+	max-height: 600px;
+}
+.main-text{
+	line-height: 1.8;
+	position:absolute;
+	bottom: 5%;
+    left: 5%;
+	transform: translate(-5% , -5%);
+	z-index: 2;
+}
+
+span{
+	background-color:var(--main-color);
+}
+
+.main-text h1,h2,h3{
+	font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", "sans-serif";
+	
+}
+
+.main-text h1{
+	font-size: small;
+}
+
+.main-text h2,h3{
+	font-size: 1.8em;
+}
+/*PC用バックナンバー*/
+.backnumber-list{
+	background:pink;
+}
+
+.backnumber-title{
+	height: 100px;
+	background: #fff;
+}
+
+.backnumber-title h4{
+	
+	margin-left: 3%;
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+}
+
+
+
+
+/* SP用のメインビジュアル */
+@media screen and (max-width:768px) {
+	main{
+		top: 60px;
+		height: 100vh;
+	    /* height: calc(100vh - 60px); */
+	    width: 100vw;
+}
+    /* .main-visual{
+		position: ;
 	} */
 
 }
