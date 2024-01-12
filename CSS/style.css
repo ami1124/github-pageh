@@ -28,9 +28,6 @@
 		display: block;
 	}
 }
-
-
-
 /*PC用のヘッダーの設定*/
 .header{
 	width: 200px;
@@ -106,6 +103,8 @@
 		top: 0;
 		height: 60px;
 		text-align: center;
+		
+		
 	}
 
 	.logo-area img{
@@ -361,8 +360,161 @@ span{
 	margin: 0 10%;
 }
 
+/*SP用のメインビジュアル*/
+@media screen and (max-width:768px) {
+	main{
+		margin-top: 60px;
+		margin-left: 0;
+		background-size:cover;
+	}
+		
+	
+	.main-visual{
+		display: block;
+		position: relative;
+		left: 0;
+		height: 100vh;
+	
+	}
+	
+	.main-visual img{
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.new-issue{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50% , -50%);
+		z-index: 1;
+	}
+	
+	.new-issue img{
+		width: 55vw;
+		max-width: 550px;
+		height: 100vh;
+		max-height: 600px;
+	}
+	.main-text{
+		line-height: 1.8;
+		position:absolute;
+		bottom: 5%;
+		left: 10%;
+		transform: translate(-10% , -10%);
+		z-index: 2;
+	}
+	
+	span{
+		background-color:var(--main-color);
+	}
+	
+	.main-text h1,h2,h3,
+	span{
+		font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", "sans-serif";
+		
+	}
+	
+	.main-text h1{
+		font-size: small;
+	}
+	
+	.main-text h2,h3{
+		font-size: 1.8em;
+	}
+/*PS用のバックナンバー*/
+	.backnumber-list{
+		background: #f8f8f8;
+	}
+	
+	.backnumber-title{
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.backnumber-title h1{
+		position: relative;
+		margin-left: 5%;
+		font-size: 1.5em;
+	}
+	
+	.backnumber-title h2{
+		position: relative;
+		margin-left: 5%;
+		margin-bottom: 20px;
+		font-size: 0.8em;
+	}
+	
+	.container{
+		display: flex;
+		flex-direction: row-reverse;
+		flex-direction: column-reverse;
+		align-items: stretch;
+	}
 
+	.backnumber-item{
+		position: relative;
+		width: 100vw;
+		list-style: none;
+	}
 
+	.backnumber-96{
+		background: #f2f5fb;
+	}
+	
+	.backnumber-97{
+		background: #e2efe7;
+	}
+	
+	.backnumber-98{
+		background: #fae8c2;
+	}
+	
+	.backnumber-99{
+		background:  #f9f2eb;
+	}
+	
+	.backnumber-100{
+		background: #fbf3d2;
+	}
+	.backnumber-101{
+		background: #ecf4f9;
+	}
 
+	.backnumber-96 img,
+	.backnumber-97 img,
+	.backnumber-98 img,
+	.backnumber-99 img,
+	.backnumber-100 img,
+	.backnumber-101 img{
+		position: relative;
+		left: 30%;
+		top: 50px;
+		width: 50%;
+		max-width: 300px;
+		height: 70%;max-height: 400px;
+		box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, .25), 0 0 20px 0 rgba(0, 0, 0, .25)
+	}
 
+	.backnumber-textbox-96,
+	.backnumber-textbox-97,
+	.backnumber-textbox-98,
+	.backnumber-textbox-99,
+	.backnumber-textbox-100,
+	.backnumber-textbox-101{
+		width: 100px;
+		height: 50px;
+	}
 
+	.backnumber-item h1,h4{
+		font-size: small;
+		margin: 0.3em 3%;
+	}
+	
+	.backnumber-item h5{
+		font-size: 1.2em;
+		margin: 0 3%;
+}
+}
