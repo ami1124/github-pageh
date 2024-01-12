@@ -197,20 +197,22 @@
 }
 
 /*PC用メインビジュアル*/
-@media screen and (min-width:768px) {
 main{
 	height: 100vh;
-	width: 100vw;
 	background-size:cover;
 	margin-left: 200px;
 }
 	
 
 .main-visual{
+	display: block;
 	position: relative;
+	height: 100vh;
+
 }
 
 .main-visual img{
+	display: block;
 	height: 100%;
 	width: 100%;
 }
@@ -218,7 +220,7 @@ main{
 .new-issue{
 	position: absolute;
 	top: 50%;
-	left: 40%;
+	left: 50%;
 	transform: translate(-50% , -50%);
 	z-index: 1;
 }
@@ -233,8 +235,8 @@ main{
 	line-height: 1.8;
 	position:absolute;
 	bottom: 5%;
-    left: 5%;
-	transform: translate(-5% , -5%);
+    left: 10%;
+	transform: translate(-10% , -10%);
 	z-index: 2;
 }
 
@@ -242,7 +244,8 @@ span{
 	background-color:var(--main-color);
 }
 
-.main-text h1,h2,h3{
+.main-text h1,h2,h3,
+span{
 	font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", "sans-serif";
 	
 }
@@ -256,39 +259,111 @@ span{
 }
 /*PC用バックナンバー*/
 .backnumber-list{
+	display: block;
 	background:pink;
 }
 
 .backnumber-title{
+	margin: 0;
+	padding: 0;
 	height: 100px;
-	background: #fff;
+	background: #f8f8f8;
 }
 
-.backnumber-title h4{
-	
-	margin-left: 3%;
+.backnumber-title h1{
+	font-size: 1.5em;
+	margin: 3%;
+	margin-bottom: 0;
+}
+
+.backnumber-title h2{
+	font-size: 0.8em;margin-left: 3%;
 }
 
 .container{
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+	align-content: stretch;
+	
 }
+
+.backnumber-item{
+	width: 100vw;
+	flex-basis: 50%;
+	list-style: none;
 }
 
-
-
-
-/* SP用のメインビジュアル */
-@media screen and (max-width:768px) {
-	main{
-		top: 60px;
-		height: 100vh;
-	    /* height: calc(100vh - 60px); */
-	    width: 100vw;
-}
-    /* .main-visual{
-		position: ;
-	} */
+.backnumber-96{
+	background: #f2f5fb;
+	height: 550px;
 
 }
+
+.backnumber-97{
+	background: #e2efe7;
+	height: 550px;
+}
+
+.backnumber-98{
+	background: #fae8c2;
+	height: 550px;
+}
+
+.backnumber-99{
+	background:  #f9f2eb;
+	height: 550px;
+}
+
+.backnumber-100{
+	background: #fbf3d2;
+	height: 550px;
+}
+
+.backnumber-101{
+	background: #ecf4f9;
+	height: 550px;
+	
+}
+
+.backnumber-96 img,
+.backnumber-97 img,
+.backnumber-98 img,
+.backnumber-99 img,
+.backnumber-100 img,
+.backnumber-101 img{
+	position: relative;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+	max-width: 300px;
+	max-height: 400px;
+	height: 50%;
+	box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, .25), 0 0 20px 0 rgba(0, 0, 0, .25)
+}
+
+.backnumber-textbox-96,
+.backnumber-textbox-97,
+.backnumber-textbox-98,
+.backnumber-textbox-99,
+.backnumber-textbox-100,
+.backnumber-textbox-101{
+	width: 100px;
+	height: 100px;
+}
+
+.backnumber-item h1,h4{
+	font-size: small;
+	margin: 0 10%;
+}
+
+.backnumber-item h5{
+	font-size: 1.2em;
+	margin: 0 10%;
+}
+
+
+
+
+
+
