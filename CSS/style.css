@@ -96,27 +96,6 @@ a::after {
 	transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
 	transform-origin: left top; /*左から右に向かう*/
 	}
-}
-
-/*アニメーション関係*/
-
-a::after {
-	position: absolute;
-	left: 0;
-	content: '';
-	width: 100%;
-	height: 1px;
-	background: #000000;
-	bottom: -1px;
-	transform: scale(0, 1);
-	transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
-	transition: transform 0.3s;  /*変形の時間*/
-	}
-	
-	a:hover::after {
-	transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
-	transform-origin: left top; /*左から右に向かう*/
-	}
 
 .sns-container{
 	position: relative;
@@ -143,7 +122,6 @@ a::after {
 	display: none;
 } 
 
-/*SP用のナビゲーションスタイル*/
 /*SP用のナビゲーションスタイル*/
 @media screen and (max-width:768px) {
 	/*ヘッダー*/
@@ -321,6 +299,7 @@ main{
 	font-size: small;
 	margin-bottom: 0.4em;
 	width: 46%;
+}
 .main-text_date{
 	display:block;
 	font-size: small;
@@ -375,25 +354,6 @@ main{
 	display: block;
 	width: 85%;
 }
-/*アニメーション関係*/
-.main-text{
-	animation-name:fadeRightAnime;
-	animation-duration:2.0s;
-	animation-fill-mode:forwards;
-	opacity:0;
-	}
-	
-	@keyframes fadeRightAnime{
-	  from {
-		opacity: 0;
-	   transform: translateX(-100px);
-	  }
-	
-	  to {
-		opacity: 1;
-	  transform: translateX(0);
-	  }
-	}
 
 /*PC用バックナンバー*/
 .backnumber-list{
@@ -510,6 +470,7 @@ main{
 .backnumber-tt1,
 .backnumber-tt2{
 	display:block;
+}
 .backnumber-tt1,
 .backnumber-tt2{
 	display:block;
@@ -522,6 +483,7 @@ main{
 
 .backnumber-tt3{
 	font-size: 1.3em;
+}
 .backnumber-tt3{
 	font-size: 1.3em;
 }
@@ -696,4 +658,3 @@ main{
 		box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, .25), 0 0 20px 0 rgba(0, 0, 0, .25)
 	}
 	}
-}
