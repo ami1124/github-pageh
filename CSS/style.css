@@ -37,6 +37,7 @@
 	top: 0;
 	left: 0;
 	
+	
 } 
 /*PC用のヘッダーロゴのスタイル*/
 .logo-area{
@@ -44,11 +45,14 @@
 	top: 40px;
 	text-align: center;
 	
+	
 }
 
 /*PCのナビゲーションスタイル*/
+/*PCのナビゲーションスタイル*/
 .pc-only{
 	position: relative;
+	height: 100vh;
 	height: 100vh;
 	top: 110px;
 }
@@ -63,12 +67,35 @@
 	font-size:0.8em;
 	text-align:left;
 	list-style: none;
+	list-style: none;
 }
 
 .gnav-list li a{
 	position: relative;
+	position: relative;
 	text-decoration: none;
 	color: #000;
+}
+
+/*アニメーション関係*/
+
+a::after {
+	position: absolute;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 1px;
+	background: #000000;
+	bottom: -1px;
+	transform: scale(0, 1);
+	transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+	transition: transform 0.3s;  /*変形の時間*/
+	}
+	
+	a:hover::after {
+	transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+	transform-origin: left top; /*左から右に向かう*/
+	}
 }
 
 /*アニメーション関係*/
@@ -97,10 +124,15 @@ a::after {
 
 .sns-item{
 	width: 100%;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
+	justify-content: center;
+	align-items: flex-end;
 }
+
+
 
 
 .sns-item a img{
@@ -112,10 +144,13 @@ a::after {
 } 
 
 /*SP用のナビゲーションスタイル*/
+/*SP用のナビゲーションスタイル*/
 @media screen and (max-width:768px) {
 	/*ヘッダー*/
 	.header{
 		width: 100vw;
+		height: 60px;
+		z-index: 90;
 		height: 60px;
 		z-index: 90;
 	}
@@ -141,12 +176,20 @@ a::after {
 	.gnav-hidden{
 		width: 60px;
 		height: 60px;
+		width: 60px;
+		height: 60px;
 		position: fixed;
 		right: 20px;
 		z-index: 90;
 		background: url("../img/ico-nav.svg") center center no-repeat;
+		background: url("../img/ico-nav.svg") center center no-repeat;
 		background-size: 30px;
 	}
+
+	.gnav-list{
+		height: 70%;
+	}
+    
 
 	.gnav-list{
 		height: 70%;
@@ -165,12 +208,18 @@ a::after {
 	
 	.gnav-black{
 		background: url("../img/ico-nav-close.svg") center center no-repeat;
+		background: url("../img/ico-nav-close.svg") center center no-repeat;
 		position: absolute;
 		width: 50px;
 		height: 50px;
 		top: 8px;
 		right: 40px;
+		width: 50px;
+		height: 50px;
+		top: 8px;
+		right: 40px;
 		z-index: 90;
+		background-size: 40px;
 		background-size: 40px;
 	}
 	
@@ -250,15 +299,20 @@ main{
 .new-issue img{
 	width: 100vw;
 	max-width: 500px;
+	width: 100vw;
+	max-width: 500px;
 }
 
+
 .main-text{
+	line-height: 1.4;
 	line-height: 1.4;
 	position:absolute;
 	bottom: 5%;
     left: 10%;
 	transform: translate(-10% , -10%);
 	z-index: 80;
+	overflow: hidden;
 	overflow: hidden;
 }
 
@@ -267,8 +321,46 @@ main{
 	font-size: small;
 	margin-bottom: 0.4em;
 	width: 46%;
+.main-text_date{
+	display:block;
+	font-size: small;
+	margin-bottom: 0.4em;
+	width: 46%;
 	background-color:var(--main-color);
 }
+
+.main-text_tt1,
+.main-text_tt2{
+	display:block;
+	width: 100%;
+	font-size: 2.4em;
+	margin-bottom: 0.2em;
+	background-color:var(--main-color);
+}
+
+.main-text_tt2{
+	display: block;
+	width: 85%;
+}
+/*アニメーション関係*/
+.main-text{
+	animation-name:fadeRightAnime;
+	animation-duration:2.0s;
+	animation-fill-mode:forwards;
+	opacity:0;
+	}
+	
+	@keyframes fadeRightAnime{
+	  from {
+		opacity: 0;
+	   transform: translateX(-100px);
+	  }
+	
+	  to {
+		opacity: 1;
+	  transform: translateX(0);
+	  }
+	}
 
 .main-text_tt1,
 .main-text_tt2{
@@ -312,6 +404,7 @@ main{
 	margin: 0;
 	padding: 0;
 	height: 110px;
+	height: 110px;
 	background: #f8f8f8;
 }
 
@@ -320,9 +413,13 @@ main{
 	margin-left: 3%;
 	margin-top: 0;
 	padding-top: 3%;
+	margin-left: 3%;
+	margin-top: 0;
+	padding-top: 3%;
 }
 
 .backnumber-title h2{
+	font-size: 0.7em;margin-left: 3%;
 	font-size: 0.7em;margin-left: 3%;
 }
 
@@ -343,31 +440,37 @@ main{
 .backnumber-96{
 	background: #f2f5fb;
 	height: 700px;
+	height: 700px;
 
 }
 
 .backnumber-97{
 	background: #e2efe7;
 	height: 700px;
+	height: 700px;
 }
 
 .backnumber-98{
 	background: #fae8c2;
+	height: 700px;
 	height: 700px;
 }
 
 .backnumber-99{
 	background:  #f9f2eb;
 	height: 700px;
+	height: 700px;
 }
 
 .backnumber-100{
 	background: #fbf3d2;
 	height: 700px;
+	height: 700px;
 }
 
 .backnumber-101{
 	background: #ecf4f9;
+	height: 700px;
 	height: 700px;
 	
 }
@@ -380,7 +483,9 @@ main{
 .backnumber-101 img{
 	position: relative;
 	top: 20%;
+	top: 20%;
 	left: 25%;
+	width: 50%;
 	width: 50%;
 	max-width: 300px;
 	box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, .25), 0 0 20px 0 rgba(0, 0, 0, .25)
@@ -396,16 +501,27 @@ main{
 	top: 17%;
 	margin: 10% 5%;
 
+	position: relative;
+	top: 17%;
+	margin: 10% 5%;
+
 }
 
+.backnumber-tt1,
+.backnumber-tt2{
+	display:block;
 .backnumber-tt1,
 .backnumber-tt2{
 	display:block;
 	font-size: small;
 	margin: 0.6em 0%;
 
+	margin: 0.6em 0%;
+
 }
 
+.backnumber-tt3{
+	font-size: 1.3em;
 .backnumber-tt3{
 	font-size: 1.3em;
 }
@@ -436,6 +552,7 @@ main{
 	.new-issue{
 		position: absolute;
 		top: 45%;
+		top: 45%;
 		left: 50%;
 		transform: translate(-50% , -50%);
 		z-index: 20;
@@ -444,11 +561,16 @@ main{
 	.new-issue img{
 		width: 100vw;
 		max-width: 400px;
+		width: 100vw;
+		max-width: 400px;
 	}
+
 
 	.main-text{
 		line-height: 1.4;
+		line-height: 1.4;
 		position:absolute;
+		bottom: 10%;
 		bottom: 10%;
 		left: 10%;
 		transform: translate(-10% , -10%);
@@ -460,9 +582,31 @@ main{
 		font-size: small;
 		margin-bottom: 0.4em;
 		width: 52%;
+	} 
+
+	.main-text_date{
+		display:block;
+		font-size: small;
+		margin-bottom: 0.4em;
+		width: 52%;
 		background-color:var(--main-color);
 	}
 	
+	.main-text_tt1,
+	.main-text_tt2{
+		display:block;
+		width: 100%;
+		font-size: 1.8em;
+		margin-bottom: 0.4em;
+		background-color:var(--main-color);
+	}
+	
+	.main-text_tt2{
+		display: block;
+		width: 85%;
+	}
+
+
 	.main-text_tt1,
 	.main-text_tt2{
 		display:block;
@@ -550,5 +694,6 @@ main{
 		width: 50%;
 		max-width: 300px;
 		box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, .25), 0 0 20px 0 rgba(0, 0, 0, .25)
+	}
 	}
 }
